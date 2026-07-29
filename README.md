@@ -4,6 +4,10 @@ This repository contains a small, human-readable dataset describing the normal
 Philippine Charity Sweepstakes Office (PCSO) draw schedule for the main digit
 and jackpot games covered by LottoLens PH.
 
+Public dataset page:
+
+- https://remo65588-boop.github.io/lottolens-ph-public-data/
+
 ## Files
 
 - `data/pcso-draw-schedule.csv` - normal draw days, times, and result formats.
