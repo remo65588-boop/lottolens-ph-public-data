@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it using the metadata below."
+title: "LottoLens PH Public PCSO Draw Schedule Data"
+type: dataset
+authors:
+  - name: "LottoLens PH Editorial"
+version: 1.1.0
+date-released: 2026-07-29
+license: CC-BY-4.0
+repository-code: "https://github.com/remo65588-boop/lottolens-ph-public-data"
+url: "https://remo65588-boop.github.io/lottolens-ph-public-data/"
+keywords:
+  - Philippines
+  - PCSO
+  - lottery draw schedule
+  - public data

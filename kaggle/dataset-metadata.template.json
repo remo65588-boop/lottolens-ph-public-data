@@ -1,0 +1,21 @@
+{
+  "title": "Philippines PCSO Draw Schedule and Result Format",
+  "id": "KAGGLE_USERNAME/philippines-pcso-draw-schedule",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0"
+    }
+  ],
+  "subtitle": "Normal draw days, Philippine-time draw windows, result formats, and field definitions for major PCSO games.",
+  "description": "A small public-information dataset for checking normal PCSO draw schedules and result formats. It covers 2D, 3D, 4D, 6D, Lotto 6/42, Mega Lotto 6/45, Super Lotto 6/49, Grand Lotto 6/55, and Ultra Lotto 6/58. Holiday suspensions, special draws, and official advisories may change the schedule. Always use official PCSO channels for final confirmation.",
+  "resources": [
+    {
+      "path": "pcso-draw-schedule.csv",
+      "description": "Normal draw days, times, result formats, official source, and LottoLens reference pages."
+    },
+    {
+      "path": "field-definitions.csv",
+      "description": "Definitions for every published field."
+    }
+  ]
+}

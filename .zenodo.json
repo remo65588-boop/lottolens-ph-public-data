@@ -1,0 +1,35 @@
+{
+  "upload_type": "dataset",
+  "title": "LottoLens PH Public PCSO Draw Schedule Data",
+  "description": "A small, human-readable dataset describing normal Philippine Charity Sweepstakes Office draw days, Philippine-time draw windows, result formats, field definitions, official-source context, and responsible-use limitations for the main digit and jackpot games covered by LottoLens PH.",
+  "creators": [
+    {
+      "name": "LottoLens PH Editorial"
+    }
+  ],
+  "publication_date": "2026-07-29",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "Philippines",
+    "PCSO",
+    "lottery draw schedule",
+    "2D Lotto",
+    "3D Lotto",
+    "4D Lotto",
+    "6D Lotto",
+    "public data"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://remo65588-boop.github.io/lottolens-ph-public-data/",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://lottolensph.com/results",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

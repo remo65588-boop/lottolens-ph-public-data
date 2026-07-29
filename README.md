@@ -65,3 +65,8 @@ duplicated in this small schedule repository.
 The original documentation and field definitions in this repository are
 released under the Creative Commons Attribution 4.0 International license.
 Underlying public facts remain subject to their original sources.
+
+## Citation
+
+Citation metadata is available in `CITATION.cff` and `.zenodo.json`. A
+persistent Zenodo DOI will be added after the repository release is archived.
