@@ -1,5 +1,7 @@
 # LottoLens PH Public PCSO Schedule Data
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21683518.svg)](https://doi.org/10.5281/zenodo.21683518)
+
 This repository contains a small, human-readable dataset describing the normal
 Philippine Charity Sweepstakes Office (PCSO) draw schedule for the main digit
 and jackpot games covered by LottoLens PH.
@@ -68,5 +70,8 @@ Underlying public facts remain subject to their original sources.
 
 ## Citation
 
-Citation metadata is available in `CITATION.cff` and `.zenodo.json`. A
-persistent Zenodo DOI will be added after the repository release is archived.
+Citation metadata is available in `CITATION.cff` and `.zenodo.json`.
+
+Persistent dataset DOI:
+
+- https://doi.org/10.5281/zenodo.21683518
