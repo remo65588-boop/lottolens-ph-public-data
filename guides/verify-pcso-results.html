@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Verify PCSO Lottery Results Without Screenshots</title>
+    <meta
+      name="description"
+      content="A practical checklist for verifying PCSO game names, draw dates, draw sessions, number order, and sources."
+    >
+    <link
+      rel="canonical"
+      href="https://remo65588-boop.github.io/lottolens-ph-public-data/guides/verify-pcso-results.html"
+    >
+    <style>
+      :root {
+        color-scheme: light;
+        --navy: #071634;
+        --blue: #1769e8;
+        --line: #d9e3f0;
+        --muted: #516078;
+        --page: #f3f7fc;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--page);
+        color: var(--navy);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.72;
+      }
+
+      header {
+        background: var(--navy);
+        color: white;
+      }
+
+      header div,
+      article,
+      footer {
+        width: min(820px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header div {
+        padding: 20px 0;
+      }
+
+      header a {
+        color: white;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      article {
+        margin-top: 36px;
+        margin-bottom: 32px;
+        padding: 34px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 10px 28px rgba(26, 54, 93, 0.07);
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: clamp(2rem, 6vw, 3.35rem);
+        line-height: 1.08;
+      }
+
+      h2 {
+        margin-top: 34px;
+        line-height: 1.25;
+      }
+
+      .intro {
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .checklist {
+        padding: 20px 24px;
+        border-left: 4px solid var(--blue);
+        background: #edf5ff;
+      }
+
+      a {
+        color: #0c56bd;
+      }
+
+      footer {
+        padding-bottom: 42px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 620px) {
+        article {
+          margin-top: 20px;
+          padding: 22px 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div><a href="../">LottoLens PH Public Data</a></div>
+    </header>
+
+    <article>
+      <p><strong>DATA VERIFICATION GUIDE</strong></p>
+      <h1>How to verify PCSO lottery results without relying on screenshots</h1>
+      <p class="intro">
+        A lottery-result screenshot can be convenient, but it is not a complete
+        verification record. It may be cropped, reposted after a later draw, or
+        shown without the game and draw time.
+      </p>
+
+      <p>
+        For Philippine Charity Sweepstakes Office (PCSO) results, a reliable
+        check should identify the exact game, draw date, draw time, and number
+        order before the numbers are accepted. This matters most for 2D Lotto
+        and 3D Lotto because they normally have several draw windows in one day.
+        A correct 2:00 PM result is not the 5:00 PM or 9:00 PM result.
+      </p>
+
+      <h2>Why a screenshot alone is weak evidence</h2>
+      <p>
+        A screenshot usually shows only part of the original page or post. It
+        may omit the URL, publication time, game label, or draw session. It also
+        remains unchanged if the source later corrects a typo. This does not
+        make every screenshot false; it means the image should be treated as a
+        lead to verify, not as the final record.
+      </p>
+      <p>
+        A stronger record keeps the result attached to its source context:
+        game name, draw date, draw time in Philippine Time, winning-number
+        order, source URL, and the time the record was checked.
+      </p>
+
+      <h2>Step 1: confirm the game name</h2>
+      <p>
+        PCSO operates several digit and jackpot games. Similar-looking number
+        sets can belong to different games, and the expected result length
+        changes by game. 2D Lotto has two digits; 3D Lotto has three; 4D Lotto
+        has four; and 6D Lotto has six. Lotto 6/42 through Ultra Lotto 6/58 each
+        publish six drawn numbers, but from different number ranges.
+      </p>
+      <p>Do not verify a number combination until the game label is visible.</p>
+
+      <h2>Step 2: match the draw date and session</h2>
+      <p>
+        PCSO's published operating materials show normal 2:00 PM, 5:00 PM, and
+        9:00 PM draw windows, with 2D Lotto and 3D Lotto appearing in all three
+        daily windows. Other digit and jackpot games normally appear in the
+        9:00 PM window on their scheduled days.
+      </p>
+      <p>
+        The schedule can change because of holidays, suspended draws, special
+        draws, or official advisories. The official PCSO website and official
+        channels should remain the final authority for current changes.
+      </p>
+      <p>
+        The open
+        <a href="../">Philippine PCSO draw schedule dataset</a>
+        provides a compact reference for normal game days, draw times, result
+        formats, and field definitions.
+      </p>
+
+      <h2>Step 3: preserve number order and leading zeroes</h2>
+      <p>
+        For digit games, leading zeroes are meaningful. A result displayed as
+        <code>04</code> should not be rewritten as <code>4</code> in a data
+        archive. For 3D, 4D, and 6D games, position also matters: digits should
+        be stored in the order in which the result was published.
+      </p>
+      <p>
+        For jackpot games, preserve all six drawn numbers. Sorting may be useful
+        for analysis, but the original published order should remain available
+        in the verification record.
+      </p>
+
+      <h2>Step 4: check an official source</h2>
+      <p>
+        The safest confirmation point is an official PCSO source. The
+        <a href="https://www.pcso.gov.ph/">PCSO website</a>
+        publishes national draw information and official materials. If an
+        independent archive is used for convenience, compare it with an
+        official source when the result is new, disputed, incomplete, or
+        materially important.
+      </p>
+
+      <h2>Step 5: use an archive that preserves context</h2>
+      <p>
+        A useful archive does more than display the newest number combination.
+        It should make it possible to inspect older rows by game, date, and draw
+        session. That context helps reveal whether a copied result belongs to a
+        different draw.
+      </p>
+      <p>
+        LottoLens PH maintains
+        <a href="https://lottolensph.com/results">latest PCSO results</a>,
+        a <a href="https://lottolensph.com/history">historical draw archive</a>,
+        and descriptive
+        <a href="https://lottolensph.com/trends">lottery trend charts</a>.
+        These resources are designed for data checking and historical
+        reference. LottoLens PH is independent and is not affiliated with or
+        endorsed by PCSO.
+      </p>
+
+      <h2>A practical verification checklist</h2>
+      <ul class="checklist">
+        <li>The game name is present.</li>
+        <li>The date and draw time are present.</li>
+        <li>The time zone is understood as PHT.</li>
+        <li>The number length matches the game.</li>
+        <li>Leading zeroes and number order are preserved.</li>
+        <li>An official source has been checked.</li>
+        <li>The archive row matches the same date and session.</li>
+      </ul>
+
+      <h2>Historical patterns do not prove the next result</h2>
+      <p>
+        Verification and prediction are different tasks. Frequency counts, hot
+        and cold numbers, and missing streaks summarize a selected historical
+        window. They do not establish what the next random draw will produce.
+        Claims such as "guaranteed win," "sure number," or "risk-free bet" are
+        not supported by a historical frequency table.
+      </p>
+
+      <h2>Final takeaway</h2>
+      <p>
+        The fastest result is not always the best-verified result. A screenshot
+        can start the check, but the final record should connect the numbers to
+        the exact game, date, session, and source. That small discipline reduces
+        stale reposts, session mix-ups, missing leading zeroes, and incorrect
+        archive entries.
+      </p>
+    </article>
+
+    <footer>
+      Source reference: Philippine Charity Sweepstakes Office. Published by the
+      LottoLens PH public-data project for information and research.
+    </footer>
+  </body>
+</html>
