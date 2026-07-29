@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://remo65588-boop.github.io/lottolens-ph-public-data/sitemap.xml
