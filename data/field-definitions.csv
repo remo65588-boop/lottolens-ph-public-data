@@ -1,0 +1,10 @@
+field,definition
+game_slug,Stable LottoLens PH game identifier
+game_name,Public game name
+game_type,Digit game or jackpot game
+result_format,Expected structure of one published result
+normal_draw_days,Normal weekly draw days
+normal_draw_times_pht,Normal draw time or times in Philippine Time
+timezone,IANA timezone used for the schedule
+official_source,Official source used for final confirmation
+reference_page,LottoLens PH game guide and result reference URL
