@@ -1,0 +1,82 @@
+{
+  "profile": "tabular-data-package",
+  "name": "philippines-pcso-draw-schedule",
+  "title": "Philippines PCSO Draw Schedule and Result Format",
+  "description": "Normal draw days, Philippine-time draw windows, result formats, and field definitions for the major PCSO digit and jackpot games covered by LottoLens PH.",
+  "version": "1.1.0",
+  "homepage": "https://lottolensph.com/research/pcso-results-data-coverage",
+  "id": "https://doi.org/10.5281/zenodo.21683518",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/",
+      "title": "Creative Commons Attribution 4.0 International"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Philippine Charity Sweepstakes Office",
+      "path": "https://www.pcso.gov.ph/"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "LottoLens PH Editorial",
+      "role": "publisher",
+      "path": "https://lottolensph.com/"
+    }
+  ],
+  "keywords": [
+    "Philippines",
+    "PCSO",
+    "lottery draw schedule",
+    "2D Lotto",
+    "3D Lotto",
+    "4D Lotto",
+    "6D Lotto",
+    "open data"
+  ],
+  "resources": [
+    {
+      "profile": "tabular-data-resource",
+      "name": "pcso-draw-schedule",
+      "path": "data/pcso-draw-schedule.csv",
+      "title": "PCSO draw schedule",
+      "description": "Normal draw days, times, result formats, official source, and LottoLens PH reference pages.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          { "name": "game_slug", "type": "string" },
+          { "name": "game_name", "type": "string" },
+          { "name": "game_type", "type": "string", "constraints": { "enum": ["digit", "jackpot"] } },
+          { "name": "result_format", "type": "string" },
+          { "name": "normal_draw_days", "type": "string" },
+          { "name": "normal_draw_times_pht", "type": "string" },
+          { "name": "timezone", "type": "string" },
+          { "name": "official_source", "type": "string", "format": "uri" },
+          { "name": "reference_page", "type": "string", "format": "uri" }
+        ],
+        "primaryKey": "game_slug"
+      }
+    },
+    {
+      "profile": "tabular-data-resource",
+      "name": "field-definitions",
+      "path": "data/field-definitions.csv",
+      "title": "Field definitions",
+      "description": "Human-readable definitions for every field in the draw-schedule resource.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          { "name": "field", "type": "string" },
+          { "name": "definition", "type": "string" }
+        ],
+        "primaryKey": "field"
+      }
+    }
+  ]
+}

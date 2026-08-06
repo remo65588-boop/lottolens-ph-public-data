@@ -14,6 +14,9 @@ Public dataset page:
 
 - `data/pcso-draw-schedule.csv` - normal draw days, times, and result formats.
 - `data/field-definitions.csv` - definitions for every published field.
+- `datapackage.json` - Frictionless Data metadata and table schemas.
+- `huggingface/` - publication-ready Hugging Face dataset card.
+- `kaggle/` - publication-ready Kaggle metadata template.
 
 ## Live resources
 
