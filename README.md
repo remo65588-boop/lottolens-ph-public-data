@@ -20,6 +20,7 @@ Public dataset page:
 - [Latest PCSO results and draw schedule](https://lottolensph.com/results)
 - [Historical draw archive](https://lottolensph.com/history)
 - [Lottery trend charts](https://lottolensph.com/trends)
+- [PCSO results data coverage and methodology report](https://lottolensph.com/research/pcso-results-data-coverage)
 
 ## Data scope
 
