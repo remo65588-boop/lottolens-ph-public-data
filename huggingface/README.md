@@ -58,7 +58,7 @@ Supporting documentation:
 ## License and citation
 
 Original documentation and field definitions are available under CC BY 4.0.
-Persistent DOI: [10.5281/zenodo.21683518](https://doi.org/10.5281/zenodo.21683518).
+Persistent DOI: [10.6084/m9.figshare.33183167.v1](https://doi.org/10.6084/m9.figshare.33183167.v1).
 
 ```bibtex
 @dataset{lottolens_ph_2026,
@@ -67,8 +67,8 @@ Persistent DOI: [10.5281/zenodo.21683518](https://doi.org/10.5281/zenodo.2168351
   year      = {2026},
   version   = {2.0.0},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.21683518},
-  url       = {https://doi.org/10.5281/zenodo.21683518}
+  doi       = {10.6084/m9.figshare.33183167.v1},
+  url       = {https://doi.org/10.6084/m9.figshare.33183167.v1}
 }
 ```
 

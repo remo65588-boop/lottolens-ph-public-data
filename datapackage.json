@@ -5,7 +5,7 @@
   "description": "Normal draw schedules and a 13,457-row independently compiled historical results snapshot with row-level provenance for nine PCSO digit and jackpot games.",
   "version": "2.0.0",
   "homepage": "https://lottolensph.com/research/pcso-results-data-coverage",
-  "id": "https://doi.org/10.5281/zenodo.21683518",
+  "id": "https://doi.org/10.6084/m9.figshare.33183167.v1",
   "licenses": [
     {
       "name": "CC-BY-4.0",

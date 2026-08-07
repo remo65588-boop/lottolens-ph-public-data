@@ -7,8 +7,11 @@ authors:
 version: 2.0.0
 date-released: 2026-08-07
 license: CC-BY-4.0
+identifiers:
+  - type: doi
+    value: 10.6084/m9.figshare.33183167.v1
 repository-code: "https://github.com/remo65588-boop/lottolens-ph-public-data"
-url: "https://remo65588-boop.github.io/lottolens-ph-public-data/"
+url: "https://doi.org/10.6084/m9.figshare.33183167.v1"
 keywords:
   - Philippines
   - PCSO
