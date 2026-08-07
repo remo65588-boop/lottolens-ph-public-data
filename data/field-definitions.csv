@@ -6,5 +6,14 @@ result_format,Expected structure of one published result
 normal_draw_days,Normal weekly draw days
 normal_draw_times_pht,Normal draw time or times in Philippine Time
 timezone,IANA timezone used for the schedule
+lottery_slug,Stable identifier for the lottery game in the historical results snapshot
+draw_date,Draw date in ISO YYYY-MM-DD format
+draw_time,Published draw window in Philippine Time
+winning_numbers,Winning-number sequence separated by hyphens
+jackpot_amount,Published jackpot amount when applicable; blank for digit games or unavailable values
+status,Publication status retained from the verified source record
+published_at,Timestamp when the result record was published or verified
+source_name,Human-readable name of the public result source
+source_url,URL for the public source associated with the row
 official_source,Official source used for final confirmation
 reference_page,LottoLens PH game guide and result reference URL

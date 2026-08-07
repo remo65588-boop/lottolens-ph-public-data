@@ -1,10 +1,10 @@
-# LottoLens PH Public PCSO Schedule Data
+# LottoLens PH Public PCSO Schedule and Historical Results Data
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21683518.svg)](https://doi.org/10.5281/zenodo.21683518)
 
-This repository contains a small, human-readable dataset describing the normal
-Philippine Charity Sweepstakes Office (PCSO) draw schedule for the main digit
-and jackpot games covered by LottoLens PH.
+This repository publishes reusable reference data for the Philippine Charity
+Sweepstakes Office (PCSO) games covered by LottoLens PH. It includes the normal
+draw schedule and a historical results snapshot with row-level source links.
 
 Public dataset page:
 
@@ -13,10 +13,29 @@ Public dataset page:
 ## Files
 
 - `data/pcso-draw-schedule.csv` - normal draw days, times, and result formats.
+- `data/verified-pcso-draw-results-snapshot.csv` - 13,457 historical result rows.
 - `data/field-definitions.csv` - definitions for every published field.
 - `datapackage.json` - Frictionless Data metadata and table schemas.
 - `huggingface/` - publication-ready Hugging Face dataset card.
 - `kaggle/` - publication-ready Kaggle metadata template.
+
+## Historical results snapshot
+
+The snapshot contains 13,457 rows across nine digit and jackpot games. Coverage
+runs from 2022-01-02 through 2026-07-20, with game-specific start and end dates.
+Each row keeps its source name and source URL so users can inspect provenance.
+
+Validation performed before publication:
+
+- all rows have nine CSV fields;
+- no duplicate `lottery_slug + draw_date + draw_time` keys;
+- no empty winning-number fields;
+- all status values are `published`;
+- no draw date is later than the 2026-08-07 snapshot publication date.
+
+This is an independently compiled historical snapshot, not an official PCSO
+database. Rows may cite PCSO or third-party public result archives. Use the
+official PCSO website or official PCSO channels as the final authority.
 
 ## Live resources
 
@@ -27,7 +46,7 @@ Public dataset page:
 
 ## Data scope
 
-The dataset covers:
+The package covers:
 
 - 2D Lotto
 - 3D Lotto
@@ -45,9 +64,11 @@ the schedule.
 
 ## Source and verification
 
-The schedule is compiled from public PCSO game information and draw-schedule
-materials. Always use the official PCSO website or official PCSO channels as
-the final authority for special advisories and result confirmation.
+Schedule data is compiled from public PCSO game information and draw-schedule
+materials. Historical results retain row-level provenance in `source_name` and
+`source_url`. The LottoLens PH verification workflow checks structure,
+uniqueness, winning-number presence, status, and date bounds before a snapshot
+is published.
 
 Official source:
 
@@ -62,20 +83,22 @@ or endorsed by PCSO.
 
 ## Updates
 
-The schedule file is reviewed when PCSO publishes a material schedule change.
-Live result records are maintained on LottoLens PH and are intentionally not
-duplicated in this small schedule repository.
+The schedule is reviewed after material PCSO schedule changes. Historical
+results are published as versioned snapshots rather than silently rewritten.
+The live LottoLens PH archive may be newer than the downloadable snapshot.
 
 ## License
 
-The original documentation and field definitions in this repository are
-released under the Creative Commons Attribution 4.0 International license.
-Underlying public facts remain subject to their original sources.
+Original documentation and field definitions are released under the Creative
+Commons Attribution 4.0 International license. Underlying public facts remain
+subject to their original sources.
 
 ## Citation
 
 Citation metadata is available in `CITATION.cff` and `.zenodo.json`.
 
-Persistent dataset DOI:
+The DOI currently resolves to the earlier schedule-focused release. A new
+Zenodo version is required before describing the DOI as covering this expanded
+historical-results snapshot.
 
 - https://doi.org/10.5281/zenodo.21683518

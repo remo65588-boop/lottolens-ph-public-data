@@ -8,21 +8,22 @@ tags:
   - lottery-results
   - draw-schedule
   - open-data
-pretty_name: Philippines PCSO Draw Schedule and Result Format
+pretty_name: Philippines PCSO Schedule and Historical Results
 size_categories:
-  - n<1K
+  - 10K<n<100K
 ---
 
-# Philippines PCSO Draw Schedule and Result Format
+# Philippines PCSO Schedule and Historical Results
 
-This small public-information dataset documents normal draw days, Philippine-time
-draw windows, result formats, and field definitions for the major Philippine Charity
-Sweepstakes Office games covered by LottoLens PH.
+This public-information dataset documents normal draw days and a 13,457-row
+historical results snapshot for nine Philippine Charity Sweepstakes Office games.
 
 ## Dataset contents
 
 - `pcso-draw-schedule.csv`: one row per game, including normal schedule, expected
   result structure, official source, and a LottoLens PH reference page.
+- `verified-pcso-draw-results-snapshot.csv`: independently compiled historical
+  result rows with date, time, winning numbers, publication status, and source links.
 - `field-definitions.csv`: definitions for each published field.
 
 Covered games include 2D Lotto, 3D Lotto, 4D Lotto, 6D Lotto, Lotto 6/42,
@@ -36,12 +37,14 @@ Mega Lotto 6/45, Super Lotto 6/49, Grand Lotto 6/55, and Ultra Lotto 6/58.
 - Journalism and public-information workflows
 
 This dataset does not contain predictions and must not be used to claim guaranteed
-outcomes. Holiday suspensions, special draws, and official advisories may change the
+outcomes. The historical file is an independent compilation, not an official PCSO
+database. Holiday suspensions, special draws, and official advisories may change the
 normal schedule.
 
 ## Source and verification
 
 The schedule is compiled from public PCSO game information and draw-schedule materials.
+Historical rows retain public source names and URLs for provenance review.
 Use the [official PCSO website](https://www.pcso.gov.ph/) as the final authority for
 current results and special advisories.
 
@@ -60,9 +63,9 @@ Persistent DOI: [10.5281/zenodo.21683518](https://doi.org/10.5281/zenodo.2168351
 ```bibtex
 @dataset{lottolens_ph_2026,
   author    = {{LottoLens PH Editorial}},
-  title     = {LottoLens PH Public PCSO Draw Schedule Data},
+  title     = {LottoLens PH Public PCSO Schedule and Historical Results Data},
   year      = {2026},
-  version   = {1.1.0},
+  version   = {2.0.0},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.21683518},
   url       = {https://doi.org/10.5281/zenodo.21683518}
@@ -71,5 +74,6 @@ Persistent DOI: [10.5281/zenodo.21683518](https://doi.org/10.5281/zenodo.2168351
 
 ## Limitations
 
-The files describe normal schedules rather than a complete archive of winning numbers.
-They are independently maintained and are not affiliated with or endorsed by PCSO.
+The historical snapshot is not guaranteed to be complete or current beyond its
+2026-07-20 maximum coverage date. It is independently maintained and is not
+affiliated with or endorsed by PCSO.

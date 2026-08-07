@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PCSO Draw Data Coverage and Methodology | LottoLens PH</title>
-    <meta name="description" content="Coverage, provenance, update rules, field handling, and limitations for the LottoLens PH open PCSO draw-schedule dataset.">
+    <meta name="description" content="Coverage, provenance, validation, update rules, and limitations for a 13,457-row LottoLens PH historical PCSO results snapshot and draw-schedule dataset.">
     <link rel="canonical" href="https://remo65588-boop.github.io/lottolens-ph-public-data/research/pcso-results-data-coverage.html">
     <meta property="og:title" content="PCSO Draw Data Coverage and Methodology">
-    <meta property="og:description" content="A citable methodology note for the LottoLens PH open PCSO draw-schedule dataset.">
+    <meta property="og:description" content="A citable methodology note for the LottoLens PH open schedule and 13,457-row historical results dataset.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://remo65588-boop.github.io/lottolens-ph-public-data/research/pcso-results-data-coverage.html">
     <script type="application/ld+json">
@@ -15,7 +15,7 @@
         "@context": "https://schema.org",
         "@type": "TechArticle",
         "headline": "PCSO Draw Data Coverage and Methodology",
-        "description": "Coverage, provenance, update rules, field handling, and limitations for the LottoLens PH open PCSO draw-schedule dataset.",
+        "description": "Coverage, provenance, validation, update rules, and limitations for the LottoLens PH open schedule and 13,457-row historical results dataset.",
         "datePublished": "2026-08-07",
         "dateModified": "2026-08-07",
         "author": {
@@ -123,12 +123,12 @@
       <h1>PCSO draw data coverage and methodology</h1>
       <p class="intro">
         This note explains what the LottoLens PH open dataset covers, where the
-        schedule facts come from, how fields are normalized, and what the data
-        should not be used to claim.
+        schedule and historical-result records cover, how fields are normalized
+        and validated, and what the data should not be used to claim.
       </p>
 
       <div class="facts">
-        <div class="fact"><strong>Coverage</strong>9 digit and jackpot games</div>
+        <div class="fact"><strong>Snapshot</strong>13,457 historical rows</div>
         <div class="fact"><strong>Time standard</strong>Philippine Time, UTC+8</div>
         <div class="fact"><strong>License</strong>CC BY 4.0 documentation</div>
         <div class="fact"><strong>Persistent ID</strong>DOI 10.5281/zenodo.21683518</div>
@@ -136,16 +136,19 @@
 
       <h2>Dataset scope</h2>
       <p>
-        The dataset describes the normal draw schedule for 2D Lotto, 3D Lotto,
+        The package describes the normal draw schedule for 2D Lotto, 3D Lotto,
         4D Lotto, 6D Lotto, Lotto 6/42, Mega Lotto 6/45, Super Lotto 6/49,
         Grand Lotto 6/55, and Ultra Lotto 6/58. It records normal draw days,
         draw times, result formats, number ranges, and plain-language field
-        definitions.
+        definitions. It also includes a fixed historical snapshot covering
+        13,457 result rows from 2022-01-02 through 2026-07-20. Individual games
+        have different start and end dates within that overall range.
       </p>
       <p>
-        It is intentionally small. Live winning-number rows remain in the
-        maintained <a href="https://lottolensph.com/history">LottoLens PH historical draw archive</a>
-        so that schedule metadata and frequently changing results are not confused.
+        Download the
+        <a href="../data/verified-pcso-draw-results-snapshot.csv">historical results CSV</a>.
+        The maintained <a href="https://lottolensph.com/history">LottoLens PH historical draw archive</a>
+        may be newer than this versioned snapshot.
       </p>
 
       <h2>Sources and provenance</h2>
@@ -157,7 +160,10 @@
         official result announcements.
       </p>
       <p>
-        Each published field is defined in a separate CSV. The repository also
+        Historical rows retain <code>source_name</code> and <code>source_url</code> fields. Sources
+        can include official materials and third-party public result archives,
+        so the snapshot is an independent compilation rather than an official
+        PCSO database. Each published field is defined in a separate CSV. The repository also
         includes Frictionless Data metadata, machine-readable table schemas,
         citation metadata, and a public license so researchers can inspect the
         package without reverse-engineering the website.
@@ -172,12 +178,21 @@
         <li>Unknown or unavailable facts should remain empty rather than estimated.</li>
       </ul>
 
+      <h2>Snapshot validation</h2>
+      <ul>
+        <li>13,457 data rows and nine fields per row.</li>
+        <li>No duplicate game, draw-date, and draw-time keys.</li>
+        <li>No empty winning-number fields.</li>
+        <li>All rows use the published status value.</li>
+        <li>No draw date is later than the 2026-08-07 snapshot publication date.</li>
+      </ul>
+
       <h2>Update policy</h2>
       <p>
-        The schedule package is reviewed when PCSO announces a material change.
-        Live result pages are updated separately after draw windows because a
-        schedule record and a verified winning result have different update
-        lifecycles. The
+        The schedule is reviewed when PCSO announces a material change.
+        Historical CSVs are published as fixed snapshots so previously cited
+        files are not silently rewritten. Live result pages are updated
+        separately after draw windows. The
         <a href="../guides/verify-pcso-results.html">result-verification guide</a>
         describes how to match the game, date, session, number order, and source.
       </p>
@@ -199,7 +214,7 @@
 
       <h2>How to cite the dataset</h2>
       <p class="citation">
-        LottoLens PH. <em>Philippine PCSO Draw Schedule Data</em>. 2026.
+        LottoLens PH. <em>Philippine PCSO Schedule and Historical Results Data</em>. 2026.
         DOI: <a href="https://doi.org/10.5281/zenodo.21683518">10.5281/zenodo.21683518</a>.
         Access the current package at <a href="../">LottoLens PH Public Data</a>.
       </p>

@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Philippine PCSO Draw Schedule Data | LottoLens PH</title>
+    <title>Philippine PCSO Schedule and Historical Results Data | LottoLens PH</title>
     <meta
       name="description"
-      content="Open reference data for normal PCSO digit and jackpot draw schedules in Philippine Time, with field definitions and verification links."
+      content="Download normal PCSO draw schedules and a 13,457-row historical results snapshot with row-level source links for nine Philippine lottery games."
     >
     <link rel="canonical" href="https://remo65588-boop.github.io/lottolens-ph-public-data/">
-    <meta property="og:title" content="Philippine PCSO Draw Schedule Data">
+    <meta property="og:title" content="Philippine PCSO Schedule and Historical Results Data">
     <meta
       property="og:description"
-      content="Open reference data for normal PCSO digit and jackpot draw schedules in Philippine Time."
+      content="Open PCSO schedule data and a 13,457-row historical results snapshot with transparent provenance."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://remo65588-boop.github.io/lottolens-ph-public-data/">
@@ -20,8 +20,8 @@
       {
         "@context": "https://schema.org",
         "@type": "Dataset",
-        "name": "Philippine PCSO Draw Schedule Data",
-        "description": "Normal draw days, times, result formats, and field definitions for the main Philippine PCSO digit and jackpot games.",
+        "name": "Philippine PCSO Schedule and Historical Results Data",
+        "description": "Normal draw schedules and a 13,457-row independently compiled historical results snapshot with row-level provenance for nine Philippine PCSO games.",
         "url": "https://remo65588-boop.github.io/lottolens-ph-public-data/",
         "license": "https://creativecommons.org/licenses/by/4.0/",
         "creator": {
@@ -35,6 +35,11 @@
           "url": "https://lottolensph.com/research/pcso-results-data-coverage"
         },
         "distribution": [
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "text/csv",
+            "contentUrl": "https://remo65588-boop.github.io/lottolens-ph-public-data/data/verified-pcso-draw-results-snapshot.csv"
+          },
           {
             "@type": "DataDownload",
             "encodingFormat": "text/csv",
@@ -212,11 +217,11 @@
 
     <main>
       <p><strong>OPEN REFERENCE DATA</strong></p>
-      <h1>Philippine PCSO draw schedule and field definitions</h1>
+      <h1>Philippine PCSO schedule and historical results data</h1>
       <p class="intro">
-        A compact reference for the normal draw windows of the main digit and
-        jackpot games covered by LottoLens PH. Times are shown in Philippine
-        Time (PHT, UTC+8).
+        Download normal draw windows and a 13,457-row historical result snapshot
+        for nine digit and jackpot games. Times use Philippine Time (PHT, UTC+8),
+        and each result row retains its public source name and URL.
       </p>
 
       <section class="panel" aria-labelledby="live-resources">
@@ -262,12 +267,15 @@
       <section class="panel" aria-labelledby="downloads">
         <h2 id="downloads">Downloadable files</h2>
         <ul>
+          <li><a href="data/verified-pcso-draw-results-snapshot.csv"><code>verified-pcso-draw-results-snapshot.csv</code></a> (13,457 rows)</li>
           <li><a href="data/pcso-draw-schedule.csv"><code>pcso-draw-schedule.csv</code></a></li>
           <li><a href="data/field-definitions.csv"><code>field-definitions.csv</code></a></li>
         </ul>
         <p>
-          Holiday suspensions, special draws, and official advisories can change
-          the normal schedule. The official
+          The historical file is an independently compiled, date-stamped
+          snapshot rather than an official PCSO database. Holiday suspensions,
+          special draws, and official advisories can change the normal schedule.
+          The official
           <a href="https://www.pcso.gov.ph/">PCSO website</a> remains the final
           authority.
         </p>
@@ -286,10 +294,9 @@
       <section class="panel" aria-labelledby="coverage-report">
         <h2 id="coverage-report">Archive coverage and methodology</h2>
         <p>
-          The live LottoLens PH archive publishes a separate, date-stamped
-          coverage report with the current record count, per-game coverage,
-          collection method, provenance notes, freshness checks, and known
-          limitations.
+          The methodology note documents the snapshot's 13,457 rows, game-level
+          coverage, row-level provenance, normalization rules, validation checks,
+          update policy, and known limitations.
         </p>
         <p>
           Read the
@@ -300,9 +307,9 @@
           <a href="https://lottolensph.com/research/pcso-results-data-coverage">
             PCSO Results Data Coverage Report
           </a>
-          before citing archive totals. Counts can change after new draws,
-          while the schedule files in this repository change only when normal
-          draw rules materially change.
+          before citing archive totals. The live archive can change after new
+          draws, while this downloadable snapshot remains fixed until a new
+          version is published.
         </p>
       </section>
 

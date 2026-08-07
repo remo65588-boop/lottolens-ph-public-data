@@ -1,9 +1,9 @@
 {
   "profile": "tabular-data-package",
-  "name": "philippines-pcso-draw-schedule",
-  "title": "Philippines PCSO Draw Schedule and Result Format",
-  "description": "Normal draw days, Philippine-time draw windows, result formats, and field definitions for the major PCSO digit and jackpot games covered by LottoLens PH.",
-  "version": "1.1.0",
+  "name": "philippines-pcso-schedule-and-historical-results",
+  "title": "Philippines PCSO Draw Schedule and Historical Results Snapshot",
+  "description": "Normal draw schedules and a 13,457-row independently compiled historical results snapshot with row-level provenance for nine PCSO digit and jackpot games.",
+  "version": "2.0.0",
   "homepage": "https://lottolensph.com/research/pcso-results-data-coverage",
   "id": "https://doi.org/10.5281/zenodo.21683518",
   "licenses": [
@@ -34,6 +34,7 @@
     "3D Lotto",
     "4D Lotto",
     "6D Lotto",
+    "historical lottery results",
     "open data"
   ],
   "resources": [
@@ -63,10 +64,34 @@
     },
     {
       "profile": "tabular-data-resource",
+      "name": "verified-pcso-draw-results-snapshot",
+      "path": "data/verified-pcso-draw-results-snapshot.csv",
+      "title": "Historical PCSO draw results snapshot",
+      "description": "Independently compiled historical result rows with draw date, time, winning numbers, publication status, and row-level source provenance. Snapshot published 2026-08-07.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          { "name": "lottery_slug", "type": "string" },
+          { "name": "draw_date", "type": "date", "format": "%Y-%m-%d" },
+          { "name": "draw_time", "type": "string" },
+          { "name": "winning_numbers", "type": "string" },
+          { "name": "jackpot_amount", "type": "number" },
+          { "name": "status", "type": "string", "constraints": { "enum": ["published"] } },
+          { "name": "published_at", "type": "datetime" },
+          { "name": "source_name", "type": "string" },
+          { "name": "source_url", "type": "string", "format": "uri" }
+        ],
+        "primaryKey": ["lottery_slug", "draw_date", "draw_time"]
+      }
+    },
+    {
+      "profile": "tabular-data-resource",
       "name": "field-definitions",
       "path": "data/field-definitions.csv",
       "title": "Field definitions",
-      "description": "Human-readable definitions for every field in the draw-schedule resource.",
+      "description": "Human-readable definitions for fields in the schedule and historical-results resources.",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",

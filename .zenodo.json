@@ -1,19 +1,20 @@
 {
   "upload_type": "dataset",
-  "title": "LottoLens PH Public PCSO Draw Schedule Data",
-  "description": "A small, human-readable dataset describing normal Philippine Charity Sweepstakes Office draw days, Philippine-time draw windows, result formats, field definitions, official-source context, and responsible-use limitations for the main digit and jackpot games covered by LottoLens PH.",
+  "title": "LottoLens PH Public PCSO Schedule and Historical Results Data",
+  "description": "A reusable reference dataset containing normal Philippine Charity Sweepstakes Office draw schedules and a 13,457-row historical results snapshot with row-level source names and URLs, validation notes, field definitions, and responsible-use limitations for nine digit and jackpot games.",
   "creators": [
     {
       "name": "LottoLens PH Editorial"
     }
   ],
-  "publication_date": "2026-07-29",
+  "publication_date": "2026-08-07",
   "access_right": "open",
   "license": "cc-by-4.0",
   "keywords": [
     "Philippines",
     "PCSO",
     "lottery draw schedule",
+    "historical lottery results",
     "2D Lotto",
     "3D Lotto",
     "4D Lotto",
