@@ -14,7 +14,6 @@ info:
     url: https://lottolensph.com/research/pcso-results-data-coverage
   license:
     name: CC BY 4.0 for original documentation and compiled metadata
-    identifier: CC-BY-4.0
     url: https://creativecommons.org/licenses/by/4.0/
 servers:
   - url: https://remo65588-boop.github.io/lottolens-ph-public-data
