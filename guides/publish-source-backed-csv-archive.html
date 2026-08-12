@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Publish a Source-Backed Historical CSV Archive</title>
+    <meta
+      name="description"
+      content="A reusable checklist for publishing a historical CSV archive with row-level provenance, stable releases, validation evidence, metadata, licensing, and correction paths."
+    >
+    <link
+      rel="canonical"
+      href="https://remo65588-boop.github.io/lottolens-ph-public-data/guides/publish-source-backed-csv-archive.html"
+    >
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "How to Publish a Source-Backed Historical CSV Archive",
+        "description": "A reusable checklist for publishing historical tabular data with provenance, validation, stable releases, metadata, licensing, and correction paths.",
+        "datePublished": "2026-08-12",
+        "dateModified": "2026-08-12",
+        "author": {
+          "@type": "Organization",
+          "name": "LottoLens PH Public Data"
+        },
+        "mainEntityOfPage": "https://remo65588-boop.github.io/lottolens-ph-public-data/guides/publish-source-backed-csv-archive.html"
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: light;
+        --navy: #071634;
+        --blue: #1769e8;
+        --line: #d9e3f0;
+        --muted: #516078;
+        --page: #f3f7fc;
+        --note: #edf5ff;
+        --warn: #fff7df;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--page);
+        color: var(--navy);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.72;
+      }
+
+      header { background: var(--navy); color: white; }
+
+      header div,
+      article,
+      footer {
+        width: min(860px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header div { padding: 20px 0; }
+      header a { color: white; font-weight: 800; text-decoration: none; }
+
+      article {
+        margin-top: 36px;
+        margin-bottom: 32px;
+        padding: 36px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 10px 28px rgba(26, 54, 93, 0.07);
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: clamp(2rem, 6vw, 3.2rem);
+        line-height: 1.08;
+      }
+
+      h2 { margin-top: 36px; line-height: 1.25; }
+      h3 { margin-top: 26px; line-height: 1.3; }
+      .intro { color: var(--muted); font-size: 1.08rem; }
+      a { color: #0c56bd; }
+      code { overflow-wrap: anywhere; }
+
+      .checklist,
+      .example,
+      .warning {
+        padding: 20px 24px;
+        border-left: 4px solid var(--blue);
+        background: var(--note);
+      }
+
+      .warning {
+        border-left-color: #c68100;
+        background: var(--warn);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0;
+      }
+
+      th,
+      td {
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th { background: #eef3f9; }
+
+      footer {
+        padding-bottom: 42px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 620px) {
+        article { margin-top: 20px; padding: 22px 18px; }
+        table { font-size: 0.9rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div><a href="../">LottoLens PH Public Data</a></div>
+    </header>
+
+    <article>
+      <p><strong>OPEN DATA PUBLISHING GUIDE</strong></p>
+      <h1>How to publish a source-backed historical CSV archive</h1>
+      <p class="intro">
+        A downloadable CSV is not automatically a trustworthy public dataset.
+        Historical records become reusable when a reader can understand every
+        field, inspect where each row came from, reproduce basic checks, cite a
+        stable version, and report a correction.
+      </p>
+
+      <p>
+        This guide describes a small-project workflow for publishing historical
+        event data. It applies to archives such as public notices, observations,
+        schedules, sports results, election records, or other dated facts gathered
+        from multiple public pages. The worked example is the LottoLens PH public
+        draw archive, but the controls are intentionally domain-independent.
+      </p>
+
+      <h2>1. Define the archive before collecting rows</h2>
+      <p>
+        Write down what one row represents, the fields that form a unique record,
+        the time zone, the date range, and the sources you will accept. If those
+        rules are implicit, two contributors may encode the same event differently
+        or combine records that should remain separate.
+      </p>
+
+      <table>
+        <thead>
+          <tr><th>Decision</th><th>What to publish</th><th>Why it matters</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Unit of observation</td><td>A one-sentence row definition</td><td>Prevents mixed granularity</td></tr>
+          <tr><td>Composite key</td><td>The fields that identify one record</td><td>Supports duplicate checks</td></tr>
+          <tr><td>Time convention</td><td>Time zone and date format</td><td>Prevents session and day shifts</td></tr>
+          <tr><td>Coverage</td><td>First and last included dates</td><td>Stops partial data being mistaken for complete history</td></tr>
+          <tr><td>Source policy</td><td>Official and fallback source rules</td><td>Makes provenance decisions reviewable</td></tr>
+        </tbody>
+      </table>
+
+      <h2>2. Keep provenance at row level</h2>
+      <p>
+        A single “Sources” paragraph is too coarse when an archive combines many
+        dates or providers. Keep a source name and source URL on every row whenever
+        possible. That allows a user to audit a disputed record without guessing
+        which page supported it.
+      </p>
+      <p>
+        Record provenance is not the same as claiming that every source is equally
+        authoritative. Document the preferred authority and explain when a fallback
+        archive is used. If a source page later disappears, preserve the original
+        URL and mark the verification limitation instead of silently replacing the
+        citation.
+      </p>
+
+      <div class="warning">
+        <strong>Do not manufacture certainty.</strong> A structurally valid row can
+        still contain an incorrect fact. Separate format validation, source
+        availability, and factual verification in both code and documentation.
+      </div>
+
+      <h2>3. Publish a field dictionary beside the CSV</h2>
+      <p>
+        Column names rarely explain all important constraints. A field dictionary
+        should state the data type, permitted format, null policy, example value,
+        and meaning of each field. Preserve identifiers that can contain leading
+        zeroes as strings. Use an unambiguous date format such as ISO 8601.
+      </p>
+      <p>
+        When a value contains several components, document their order. If the raw
+        source order matters, do not sort it merely to simplify analysis. Derived
+        columns should be visibly labelled and their calculation explained.
+      </p>
+
+      <h2>4. Make validation results reproducible</h2>
+      <p>
+        Publish the checks, not only a sentence saying that the data was “cleaned.”
+        At minimum, a fixed tabular release should report:
+      </p>
+
+      <ul class="checklist">
+        <li>row and column counts;</li>
+        <li>first and last dates;</li>
+        <li>duplicate count for the declared key;</li>
+        <li>null counts for required fields;</li>
+        <li>invalid date, range, or enumeration counts;</li>
+        <li>empty or malformed source URL counts;</li>
+        <li>file size and a cryptographic checksum;</li>
+        <li>the exact script or commands used for the checks.</li>
+      </ul>
+
+      <p>
+        A zero-error validation result proves only the rules tested. Publish the
+        validator and name its limits so users can distinguish mechanical quality
+        from full factual accuracy.
+      </p>
+
+      <h2>5. Separate a stable release from a changing live view</h2>
+      <p>
+        Researchers need a file that does not change after citation. Operational
+        users may want a live archive that continues to receive new records. Serve
+        both, but label them differently.
+      </p>
+
+      <ul>
+        <li><strong>Fixed release:</strong> version tag, date range, checksum, and immutable download.</li>
+        <li><strong>Live view:</strong> current coverage, update time, and a warning that totals can change.</li>
+        <li><strong>Change log:</strong> additions, corrections, removals, and the reason for each material revision.</li>
+      </ul>
+
+      <p>
+        Never update a file in place while leaving its version label unchanged.
+        If a fixed snapshot is corrected, publish a new version and retain the old
+        release with an explanatory note.
+      </p>
+
+      <h2>6. State missingness and coverage honestly</h2>
+      <p>
+        A date range does not prove that every expected event is present. Report
+        coverage by relevant subgroup and identify known gaps. Explain whether a
+        missing row means “no event occurred,” “the source was unavailable,” or
+        “the archive has not verified this record.” Those states should not be
+        collapsed into the same blank value.
+      </p>
+
+      <h2>7. Clarify ownership, licensing, and attribution</h2>
+      <p>
+        Apply a licence only to material you have the authority to license. A
+        project may license its original compilation, documentation, schema, and
+        validation code while underlying facts or source materials remain governed
+        by their original rights and terms. State that boundary next to the licence,
+        not in an obscure page.
+      </p>
+      <p>
+        Provide a preferred citation containing the dataset title, publisher,
+        version, year, stable URL, and access date when appropriate. Machine-readable
+        metadata such as <code>CITATION.cff</code>, Data Package metadata, or
+        Schema.org <code>Dataset</code> markup improves discovery, but it should
+        match the visible documentation.
+      </p>
+
+      <h2>8. Give users a correction and support path</h2>
+      <p>
+        Publish a clear way to report incorrect rows, broken sources, privacy
+        concerns, or ambiguous fields. Ask reporters to include the record key,
+        the disputed value, supporting evidence, and the requested correction.
+        Document how corrections are reviewed and how quickly the project normally
+        responds.
+      </p>
+
+      <h2>9. Verify the public release as a user would</h2>
+      <p>
+        After publishing, test the landing page, CSV, field dictionary, licence,
+        citation file, and source links without relying on an authenticated session.
+        Confirm HTTP status, canonical URL, indexability, sitemap presence, and that
+        the downloaded file checksum matches the release record. A successful build
+        or upload is not proof that the public artifact is usable.
+      </p>
+
+      <h2>Worked example: a fixed public-event archive</h2>
+      <div class="example">
+        <p>
+          The <a href="../">LottoLens PH public PCSO archive</a> publishes a fixed
+          13,457-row CSV covering nine games from 2022-01-02 through 2026-07-20.
+          It includes a field dictionary, row-level source URLs, a CC BY 4.0
+          compilation licence, citation metadata, and a versioned source tag.
+        </p>
+        <p>
+          Its <a href="../research/pcso-results-data-coverage.html">coverage and
+          methodology note</a> reports validation counts and limitations. It also
+          states that the archive is independently compiled and that the Philippine
+          Charity Sweepstakes Office remains the final authority. This boundary is
+          essential: publishing better metadata must not turn an independent archive
+          into a falsely official source.
+        </p>
+      </div>
+
+      <h2>Release checklist</h2>
+      <ol class="checklist">
+        <li>Define one row, the unique key, time zone, and coverage.</li>
+        <li>Attach source identity and URL to each record.</li>
+        <li>Publish a field dictionary and machine-readable metadata.</li>
+        <li>Run and save duplicate, null, range, source, and checksum checks.</li>
+        <li>Create an immutable version and distinguish it from live data.</li>
+        <li>Document known gaps and the meaning of missing values.</li>
+        <li>State licensing boundaries and provide a preferred citation.</li>
+        <li>Publish a correction path and versioned change log.</li>
+        <li>Verify every public artifact without a privileged session.</li>
+      </ol>
+
+      <p>
+        The goal is not to make a dataset look authoritative. It is to let another
+        person inspect what was collected, understand what was not, reproduce the
+        mechanical checks, and cite the exact version they used.
+      </p>
+    </article>
+
+    <footer>
+      Published by the LottoLens PH public-data project under CC BY 4.0. This
+      guide describes a general publication workflow and does not certify the
+      factual accuracy of any third-party dataset.
+    </footer>
+  </body>
+</html>
