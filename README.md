@@ -17,6 +17,7 @@ Public dataset page:
 - `data/field-definitions.csv` - definitions for every published field.
 - `datapackage.json` - Frictionless Data metadata and table schemas.
 - `api/` - free, no-auth, CORS-enabled static JSON endpoints and OpenAPI 3.1 documentation.
+- `postman/` - importable Postman Collection with executable checks for all three API endpoints.
 - `apis.json` - APIs.json 0.19 discovery metadata.
 - `huggingface/` - publication-ready Hugging Face dataset card.
 - `kaggle/` - publication-ready Kaggle metadata template.
@@ -55,6 +56,7 @@ The fixed snapshot is also available through versioned, read-only JSON endpoints
 - Results: https://remo65588-boop.github.io/lottolens-ph-public-data/api/v1/results.json
 - Schedule: https://remo65588-boop.github.io/lottolens-ph-public-data/api/v1/schedule.json
 - OpenAPI: https://remo65588-boop.github.io/lottolens-ph-public-data/api/openapi.yaml
+- Postman Collection: https://raw.githubusercontent.com/remo65588-boop/lottolens-ph-public-data/main/postman/LottoLens-PH-Public-PCSO-Data.postman_collection.json
 
 The API requires no authentication, uses HTTPS, and is served with cross-origin
 access enabled. Version `v1` is a fixed snapshot, not a live result feed.

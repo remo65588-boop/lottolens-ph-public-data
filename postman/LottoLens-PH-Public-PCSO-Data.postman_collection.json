@@ -1,0 +1,106 @@
+{
+  "info": {
+    "name": "LottoLens PH Public PCSO Data API",
+    "description": "Read-only requests for a fixed, independently compiled snapshot of 13,457 Philippine PCSO draw-result rows and the normal schedule for nine games. No authentication is required. This is not an official PCSO database or a prediction service. Methodology: https://lottolensph.com/research/pcso-results-data-coverage",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://remo65588-boop.github.io/lottolens-ph-public-data",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get snapshot metadata",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/metadata.json",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "metadata.json"]
+        },
+        "description": "Returns API and dataset versions, fixed-snapshot status, record counts, coverage, endpoint URLs and checksums."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Fixed snapshot with expected counts', () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body.fixedSnapshot).to.eql(true);",
+              "  pm.expect(body.resultRecordCount).to.eql(13457);",
+              "  pm.expect(body.scheduleRecordCount).to.eql(9);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Get historical results snapshot",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/results.json",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "results.json"]
+        },
+        "description": "Returns all 13,457 historical result rows in the fixed snapshot with row-level source provenance. The response is approximately 5.4 MB."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Expected result count', () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body.fixedSnapshot).to.eql(true);",
+              "  pm.expect(body.recordCount).to.eql(13457);",
+              "  pm.expect(body.results).to.have.lengthOf(13457);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Get normal draw schedule",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/schedule.json",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "schedule.json"]
+        },
+        "description": "Returns normal Philippine-time draw days, windows and result formats for nine games. Official advisories take precedence."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Expected schedule count', () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body.fixedSnapshot).to.eql(true);",
+              "  pm.expect(body.recordCount).to.eql(9);",
+              "  pm.expect(body.schedule).to.have.lengthOf(9);",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
