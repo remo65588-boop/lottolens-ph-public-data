@@ -3,9 +3,9 @@
   "name": "philippines-pcso-schedule-and-historical-results",
   "title": "Philippines PCSO Draw Schedule and Historical Results Snapshot",
   "description": "Normal draw schedules and a 13,457-row independently compiled historical results snapshot with row-level provenance for nine PCSO digit and jackpot games.",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "homepage": "https://lottolensph.com/research/pcso-results-data-coverage",
-  "id": "https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.0.1",
+  "id": "https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.1.0",
   "licenses": [
     {
       "name": "CC-BY-4.0",

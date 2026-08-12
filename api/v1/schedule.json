@@ -1,0 +1,110 @@
+{
+  "apiVersion": "1.0.0",
+  "datasetVersion": "2.1.0",
+  "fixedSnapshot": true,
+  "snapshotDate": "2026-08-12",
+  "recordCount": 9,
+  "disclaimer": "Normal draw windows only; holidays, special draws, and official advisories can change the schedule.",
+  "officialSource": "https://www.pcso.gov.ph/",
+  "schedule": [
+    {
+      "game_slug": "2d-lotto",
+      "game_name": "2D Lotto",
+      "game_type": "digit",
+      "result_format": "2 digits",
+      "normal_draw_days": "Daily",
+      "normal_draw_times_pht": "2:00 PM; 5:00 PM; 9:00 PM",
+      "timezone": "Asia/Manila",
+      "official_source": "https://www.pcso.gov.ph/",
+      "reference_page": "https://lottolensph.com/lottery/2d-lotto"
+    },
+    {
+      "game_slug": "3d-lotto",
+      "game_name": "3D Lotto",
+      "game_type": "digit",
+      "result_format": "3 digits",
+      "normal_draw_days": "Daily",
+      "normal_draw_times_pht": "2:00 PM; 5:00 PM; 9:00 PM",
+      "timezone": "Asia/Manila",
+      "official_source": "https://www.pcso.gov.ph/",
+      "reference_page": "https://lottolensph.com/lottery/3d-lotto"
+    },
+    {
+      "game_slug": "4d-lotto",
+      "game_name": "4D Lotto",
+      "game_type": "digit",
+      "result_format": "4 digits",
+      "normal_draw_days": "Monday; Wednesday; Friday",
+      "normal_draw_times_pht": "9:00 PM",
+      "timezone": "Asia/Manila",
+      "official_source": "https://www.pcso.gov.ph/",
+      "reference_page": "https://lottolensph.com/lottery/4d-lotto"
+    },
+    {
+      "game_slug": "6d-lotto",
+      "game_name": "6D Lotto",
+      "game_type": "digit",
+      "result_format": "6 digits",
+      "normal_draw_days": "Tuesday; Thursday; Saturday",
+      "normal_draw_times_pht": "9:00 PM",
+      "timezone": "Asia/Manila",
+      "official_source": "https://www.pcso.gov.ph/",
+      "reference_page": "https://lottolensph.com/lottery/6d-lotto"
+    },
+    {
+      "game_slug": "lotto-642",
+      "game_name": "Lotto 6/42",
+      "game_type": "jackpot",
+      "result_format": "6 numbers from 1-42",
+      "normal_draw_days": "Tuesday; Thursday; Saturday",
+      "normal_draw_times_pht": "9:00 PM",
+      "timezone": "Asia/Manila",
+      "official_source": "https://www.pcso.gov.ph/",
+      "reference_page": "https://lottolensph.com/lottery/lotto-642"
+    },
+    {
+      "game_slug": "mega-lotto-645",
+      "game_name": "Mega Lotto 6/45",
+      "game_type": "jackpot",
+      "result_format": "6 numbers from 1-45",
+      "normal_draw_days": "Monday; Wednesday; Friday",
+      "normal_draw_times_pht": "9:00 PM",
+      "timezone": "Asia/Manila",
+      "official_source": "https://www.pcso.gov.ph/",
+      "reference_page": "https://lottolensph.com/lottery/mega-lotto-645"
+    },
+    {
+      "game_slug": "super-lotto-649",
+      "game_name": "Super Lotto 6/49",
+      "game_type": "jackpot",
+      "result_format": "6 numbers from 1-49",
+      "normal_draw_days": "Tuesday; Thursday; Sunday",
+      "normal_draw_times_pht": "9:00 PM",
+      "timezone": "Asia/Manila",
+      "official_source": "https://www.pcso.gov.ph/",
+      "reference_page": "https://lottolensph.com/lottery/super-lotto-649"
+    },
+    {
+      "game_slug": "grand-lotto-655",
+      "game_name": "Grand Lotto 6/55",
+      "game_type": "jackpot",
+      "result_format": "6 numbers from 1-55",
+      "normal_draw_days": "Monday; Wednesday; Saturday",
+      "normal_draw_times_pht": "9:00 PM",
+      "timezone": "Asia/Manila",
+      "official_source": "https://www.pcso.gov.ph/",
+      "reference_page": "https://lottolensph.com/lottery/grand-lotto-655"
+    },
+    {
+      "game_slug": "ultra-lotto-658",
+      "game_name": "Ultra Lotto 6/58",
+      "game_type": "jackpot",
+      "result_format": "6 numbers from 1-58",
+      "normal_draw_days": "Tuesday; Friday; Sunday",
+      "normal_draw_times_pht": "9:00 PM",
+      "timezone": "Asia/Manila",
+      "official_source": "https://www.pcso.gov.ph/",
+      "reference_page": "https://lottolensph.com/lottery/ultra-lotto-658"
+    }
+  ]
+}

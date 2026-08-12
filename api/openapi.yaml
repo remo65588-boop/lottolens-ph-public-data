@@ -1,0 +1,141 @@
+openapi: 3.1.0
+info:
+  title: LottoLens PH Public PCSO Data API
+  version: 1.0.0
+  description: >-
+    Read-only static JSON access to a fixed, independently compiled snapshot of
+    13,457 Philippine PCSO draw-result rows and the normal schedule for nine
+    games. This is not an official PCSO database or a prediction service.
+  contact:
+    name: LottoLens PH
+    url: https://lottolensph.com/research/pcso-results-data-coverage
+  license:
+    name: CC BY 4.0 for original documentation and compiled metadata
+    identifier: CC-BY-4.0
+    url: https://creativecommons.org/licenses/by/4.0/
+servers:
+  - url: https://remo65588-boop.github.io/lottolens-ph-public-data
+    description: Public GitHub Pages endpoint
+security: []
+tags:
+  - name: Metadata
+    description: API version, dataset version, counts, coverage, and checksums.
+  - name: Results
+    description: Fixed historical draw-result rows with source provenance.
+  - name: Schedule
+    description: Normal draw days, Philippine-time windows, and result formats.
+paths:
+  /api/v1/metadata.json:
+    get:
+      operationId: getSnapshotMetadata
+      summary: Get API and fixed-snapshot metadata
+      tags: [Metadata]
+      responses:
+        "200":
+          description: Snapshot counts, coverage, checksums, and endpoint URLs
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/MetadataResponse" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /api/v1/results.json:
+    get:
+      operationId: getHistoricalResultsSnapshot
+      summary: Get all 13,457 historical result rows in the fixed snapshot
+      tags: [Results]
+      responses:
+        "200":
+          description: Fixed historical result snapshot with row-level provenance
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ResultsResponse" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /api/v1/schedule.json:
+    get:
+      operationId: getNormalDrawSchedule
+      summary: Get normal draw days, times, and result formats for nine games
+      tags: [Schedule]
+      responses:
+        "200":
+          description: Normal schedule reference; official advisories take precedence
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ScheduleResponse" }
+        "404": { $ref: "#/components/responses/NotFound" }
+components:
+  responses:
+    NotFound:
+      description: Static endpoint not found
+      content:
+        text/html:
+          schema: { type: string }
+  schemas:
+    MetadataResponse:
+      type: object
+      required: [apiVersion, datasetVersion, fixedSnapshot, snapshotDate, resultRecordCount, scheduleRecordCount, coverage, games, endpoints, sha256, documentation, methodology, license]
+      properties:
+        apiVersion: { type: string, example: 1.0.0 }
+        datasetVersion: { type: string, example: 2.1.0 }
+        fixedSnapshot: { type: boolean, const: true }
+        snapshotDate: { type: string, format: date, example: 2026-08-12 }
+        resultRecordCount: { type: integer, const: 13457 }
+        scheduleRecordCount: { type: integer, const: 9 }
+        coverage: { $ref: "#/components/schemas/Coverage" }
+        games:
+          type: array
+          items: { type: string }
+        endpoints: { type: object, additionalProperties: { type: string, format: uri } }
+        sha256: { type: object, additionalProperties: { type: string } }
+        documentation: { type: string, format: uri }
+        methodology: { type: string, format: uri }
+        license: { type: string, format: uri }
+    Coverage:
+      type: object
+      required: [start, end]
+      properties:
+        start: { type: string, format: date }
+        end: { type: string, format: date }
+    ResultsResponse:
+      type: object
+      required: [apiVersion, datasetVersion, fixedSnapshot, snapshotDate, recordCount, coverage, disclaimer, methodology, results]
+      properties:
+        apiVersion: { type: string }
+        datasetVersion: { type: string }
+        fixedSnapshot: { type: boolean, const: true }
+        snapshotDate: { type: string, format: date }
+        recordCount: { type: integer, const: 13457 }
+        coverage: { $ref: "#/components/schemas/Coverage" }
+        disclaimer: { type: string }
+        methodology: { type: string, format: uri }
+        results:
+          type: array
+          items: { $ref: "#/components/schemas/DrawResult" }
+    DrawResult:
+      type: object
+      required: [lottery_slug, draw_date, draw_time, winning_numbers, jackpot, source_name, source_url, status, created_at]
+      properties:
+        lottery_slug: { type: string }
+        draw_date: { type: string, format: date }
+        draw_time: { type: string }
+        winning_numbers: { type: string }
+        jackpot: { type: string }
+        source_name: { type: string }
+        source_url: { type: string, format: uri }
+        status: { type: string, const: published }
+        created_at: { type: string }
+    ScheduleResponse:
+      type: object
+      required: [apiVersion, datasetVersion, fixedSnapshot, snapshotDate, recordCount, disclaimer, officialSource, schedule]
+      properties:
+        apiVersion: { type: string }
+        datasetVersion: { type: string }
+        fixedSnapshot: { type: boolean, const: true }
+        snapshotDate: { type: string, format: date }
+        recordCount: { type: integer, const: 9 }
+        disclaimer: { type: string }
+        officialSource: { type: string, format: uri }
+        schedule:
+          type: array
+          items: { $ref: "#/components/schemas/ScheduleRow" }
+    ScheduleRow:
+      type: object
+      additionalProperties: { type: string }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free PCSO Historical Results JSON API | LottoLens PH Public Data</title>
+    <meta name="description" content="Use a free, no-auth, CORS-enabled static JSON API for 13,457 historical PCSO draw rows and nine normal draw schedules.">
+    <link rel="canonical" href="https://remo65588-boop.github.io/lottolens-ph-public-data/api/">
+    <style>
+      :root { color-scheme: light; --navy: #071634; --line: #d9e3f0; --muted: #516078; --page: #f3f7fc; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--page); color: var(--navy); font: 16px/1.65 Inter, ui-sans-serif, system-ui, sans-serif; }
+      header { background: var(--navy); color: white; }
+      header div, main, footer { width: min(960px, calc(100% - 32px)); margin: 0 auto; }
+      header div { padding: 22px 0; }
+      main { padding: 44px 0; }
+      h1 { max-width: 780px; margin: 0 0 14px; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; }
+      h2 { margin-top: 0; }
+      .intro { max-width: 760px; color: var(--muted); font-size: 1.08rem; }
+      .panel { margin: 18px 0; padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+      code, pre { color: #0a4eaa; }
+      pre { overflow-x: auto; padding: 16px; border-radius: 6px; background: #edf4fd; }
+      a { color: #0c56bd; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+      footer { padding: 0 0 40px; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <header><div><strong>LottoLens PH Public Data</strong> · Static JSON API v1</div></header>
+    <main>
+      <p><strong>FREE · NO AUTH · HTTPS · CORS</strong></p>
+      <h1>Philippine PCSO historical results JSON API</h1>
+      <p class="intro">
+        Read a fixed 13,457-row historical snapshot and a nine-game normal draw
+        schedule as JSON. The endpoints are versioned, anonymous, cacheable, and
+        designed for reproducible teaching, verification, and descriptive analysis.
+      </p>
+
+      <section class="panel" aria-labelledby="endpoints">
+        <h2 id="endpoints">Endpoints</h2>
+        <table>
+          <thead><tr><th>Endpoint</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td><a href="v1/metadata.json"><code>/api/v1/metadata.json</code></a></td><td>Counts, coverage, games, checksums, and resource links.</td></tr>
+            <tr><td><a href="v1/results.json"><code>/api/v1/results.json</code></a></td><td>All 13,457 fixed historical result rows with row-level source URLs.</td></tr>
+            <tr><td><a href="v1/schedule.json"><code>/api/v1/schedule.json</code></a></td><td>Normal draw days, Philippine-time windows, and result formats.</td></tr>
+          </tbody>
+        </table>
+        <p>
+          Machine-readable contract: <a href="openapi.yaml">OpenAPI 3.1</a> ·
+          discovery profile: <a href="../apis.json">APIs.json 0.19</a>
+        </p>
+      </section>
+
+      <section class="panel" aria-labelledby="example">
+        <h2 id="example">Browser example</h2>
+        <pre><code>const response = await fetch(
+  "https://remo65588-boop.github.io/lottolens-ph-public-data/api/v1/metadata.json"
+);
+const metadata = await response.json();
+console.log(metadata.resultRecordCount, metadata.coverage);</code></pre>
+      </section>
+
+      <section class="panel" id="responsible-use" aria-labelledby="limits">
+        <h2 id="limits">Source and responsible-use limits</h2>
+        <p>
+          This is an independently compiled, fixed historical snapshot—not an
+          official PCSO database, live feed, betting service, or prediction API.
+          Historical frequency does not predict future results. Review the
+          <a href="https://lottolensph.com/research/pcso-results-data-coverage">coverage, provenance, validation, and known limitations</a>
+          before using the data. Official PCSO publications remain the final authority.
+        </p>
+      </section>
+
+      <section class="panel" aria-labelledby="license">
+        <h2 id="license">License and versioning</h2>
+        <p>
+          Original documentation, field definitions, and compiled metadata are
+          available under CC BY 4.0. Underlying facts and source material remain
+          subject to their source terms. The <code>v1</code> endpoints remain fixed;
+          future breaking changes require a new versioned path.
+        </p>
+      </section>
+    </main>
+    <footer><a href="../">Dataset home</a> · <a href="https://lottolensph.com/">LottoLens PH</a></footer>
+  </body>
+</html>
