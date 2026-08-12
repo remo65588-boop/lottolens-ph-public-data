@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -22,7 +22,7 @@
         "@type": "Dataset",
         "name": "Philippine PCSO Schedule and Historical Results Data",
         "description": "Normal draw schedules and a 13,457-row independently compiled historical results snapshot with row-level provenance for nine Philippine PCSO games.",
-        "identifier": "https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.0.1",
+        "identifier": "https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.1.0",
         "url": "https://remo65588-boop.github.io/lottolens-ph-public-data/",
         "license": "https://creativecommons.org/licenses/by/4.0/",
         "creator": {
@@ -50,6 +50,11 @@
             "@type": "DataDownload",
             "encodingFormat": "text/csv",
             "contentUrl": "https://remo65588-boop.github.io/lottolens-ph-public-data/data/field-definitions.csv"
+          },
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "application/json",
+            "contentUrl": "https://remo65588-boop.github.io/lottolens-ph-public-data/api/v1/results.json"
           }
         ]
       }
@@ -280,6 +285,16 @@
           <a href="https://www.pcso.gov.ph/">PCSO website</a> remains the final
           authority.
         </p>
+      </section>
+
+      <section class="panel" aria-labelledby="api">
+        <h2 id="api">Free static JSON API</h2>
+        <p>
+          Developers can read the fixed snapshot and normal schedule through
+          no-auth, HTTPS, CORS-enabled JSON endpoints. The API includes OpenAPI
+          3.1 and APIs.json discovery metadata and does not provide predictions.
+        </p>
+        <p><a href="api/"><strong>Open API documentation</strong></a></p>
       </section>
 
       <section class="panel" aria-labelledby="guide">

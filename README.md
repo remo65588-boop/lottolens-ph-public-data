@@ -1,6 +1,6 @@
 # LottoLens PH Public PCSO Schedule and Historical Results Data
 
-[![Version](https://img.shields.io/badge/version-v2.0.1-blue)](https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.0.1)
+[![Version](https://img.shields.io/badge/version-v2.1.0-blue)](https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.1.0)
 
 This repository publishes reusable reference data for the Philippine Charity
 Sweepstakes Office (PCSO) games covered by LottoLens PH. It includes the normal
@@ -16,6 +16,8 @@ Public dataset page:
 - `data/verified-pcso-draw-results-snapshot.csv` - 13,457 historical result rows.
 - `data/field-definitions.csv` - definitions for every published field.
 - `datapackage.json` - Frictionless Data metadata and table schemas.
+- `api/` - free, no-auth, CORS-enabled static JSON endpoints and OpenAPI 3.1 documentation.
+- `apis.json` - APIs.json 0.19 discovery metadata.
 - `huggingface/` - publication-ready Hugging Face dataset card.
 - `kaggle/` - publication-ready Kaggle metadata template.
 
@@ -43,6 +45,19 @@ official PCSO website or official PCSO channels as the final authority.
 - [Historical draw archive](https://lottolensph.com/history)
 - [Lottery trend charts](https://lottolensph.com/trends)
 - [PCSO results data coverage and methodology report](https://lottolensph.com/research/pcso-results-data-coverage)
+
+## Static JSON API
+
+The fixed snapshot is also available through versioned, read-only JSON endpoints:
+
+- Documentation: https://remo65588-boop.github.io/lottolens-ph-public-data/api/
+- Metadata: https://remo65588-boop.github.io/lottolens-ph-public-data/api/v1/metadata.json
+- Results: https://remo65588-boop.github.io/lottolens-ph-public-data/api/v1/results.json
+- Schedule: https://remo65588-boop.github.io/lottolens-ph-public-data/api/v1/schedule.json
+- OpenAPI: https://remo65588-boop.github.io/lottolens-ph-public-data/api/openapi.yaml
+
+The API requires no authentication, uses HTTPS, and is served with cross-origin
+access enabled. Version `v1` is a fixed snapshot, not a live result feed.
 
 ## Data scope
 
@@ -95,10 +110,10 @@ subject to their original sources.
 
 ## Citation
 
-Citation metadata is available in `CITATION.cff`. Cite the fixed v2.0.1 source
+Citation metadata is available in `CITATION.cff`. Cite the fixed v2.1.0 source
 tag below for the complete 13,457-row snapshot and its documentation:
 
-- https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.0.1
+- https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.1.0
 
 The earlier schedule-focused archive remains available for historical
 reference at https://doi.org/10.5281/zenodo.21683518. The Figshare DOI formerly

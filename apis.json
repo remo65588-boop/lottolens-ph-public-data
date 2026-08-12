@@ -1,0 +1,47 @@
+{
+  "name": "LottoLens PH Public Data",
+  "description": "Free, read-only access to a fixed Philippine PCSO historical results snapshot and normal draw schedule.",
+  "url": "https://remo65588-boop.github.io/lottolens-ph-public-data/apis.json",
+  "created": "2026-08-12",
+  "modified": "2026-08-12",
+  "specificationVersion": "0.19",
+  "tags": ["Philippines", "PCSO", "open data", "JSON API"],
+  "maintainers": [
+    {
+      "FN": "LottoLens PH Editorial",
+      "organizationName": "LottoLens PH",
+      "url": "https://lottolensph.com/support"
+    }
+  ],
+  "apis": [
+    {
+      "aid": "lottolensph.com:public-pcso-data-api",
+      "name": "LottoLens PH Public PCSO Data API",
+      "description": "Static JSON endpoints for 13,457 historical result rows and nine normal draw schedules.",
+      "image": "https://lottolensph.com/images/brand/lottolens-header-lockup.svg",
+      "created": "2026-08-12",
+      "modified": "2026-08-12",
+      "humanURL": "https://lottolensph.com/research/pcso-results-data-coverage",
+      "baseURL": "https://remo65588-boop.github.io/lottolens-ph-public-data",
+      "tags": ["Philippines", "PCSO", "open data", "historical results", "schedule", "JSON"],
+      "properties": [
+        {
+          "type": "Documentation",
+          "url": "https://remo65588-boop.github.io/lottolens-ph-public-data/api/"
+        },
+        {
+          "type": "OpenAPI",
+          "url": "https://remo65588-boop.github.io/lottolens-ph-public-data/api/openapi.yaml"
+        },
+        {
+          "type": "InterfaceLicense",
+          "url": "https://github.com/remo65588-boop/lottolens-ph-public-data/blob/main/LICENSE"
+        },
+        {
+          "type": "TermsOfService",
+          "url": "https://remo65588-boop.github.io/lottolens-ph-public-data/api/#responsible-use"
+        }
+      ]
+    }
+  ]
+}
