@@ -1,6 +1,6 @@
 # LottoLens PH Public PCSO Schedule and Historical Results Data
 
-[![DOI](https://img.shields.io/badge/DOI-10.6084%2Fm9.figshare.33183167.v1-blue)](https://doi.org/10.6084/m9.figshare.33183167.v1)
+[![Version](https://img.shields.io/badge/version-v2.0.1-blue)](https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.0.1)
 
 This repository publishes reusable reference data for the Philippine Charity
 Sweepstakes Office (PCSO) games covered by LottoLens PH. It includes the normal
@@ -95,11 +95,13 @@ subject to their original sources.
 
 ## Citation
 
-Citation metadata is available in `CITATION.cff`. The primary DOI below covers
-the complete 13,457-row v2.0.0 snapshot and its documentation:
+Citation metadata is available in `CITATION.cff`. Cite the fixed v2.0.1 source
+tag below for the complete 13,457-row snapshot and its documentation:
 
-- https://doi.org/10.6084/m9.figshare.33183167.v1
+- https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.0.1
 
 The earlier schedule-focused archive remains available for historical
-reference at https://doi.org/10.5281/zenodo.21683518. It should not be cited as
-the identifier for the expanded historical-results snapshot.
+reference at https://doi.org/10.5281/zenodo.21683518. The Figshare DOI formerly
+shown here was removed by Figshare and is no longer a valid public citation.
+The Zenodo DOI should not be cited as the identifier for the expanded
+historical-results snapshot.

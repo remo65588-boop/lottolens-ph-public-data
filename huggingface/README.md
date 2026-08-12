@@ -58,17 +58,16 @@ Supporting documentation:
 ## License and citation
 
 Original documentation and field definitions are available under CC BY 4.0.
-Persistent DOI: [10.6084/m9.figshare.33183167.v1](https://doi.org/10.6084/m9.figshare.33183167.v1).
+Fixed source version: [v2.0.1](https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.0.1).
 
 ```bibtex
 @dataset{lottolens_ph_2026,
   author    = {{LottoLens PH Editorial}},
   title     = {LottoLens PH Public PCSO Schedule and Historical Results Data},
   year      = {2026},
-  version   = {2.0.0},
-  publisher = {Zenodo},
-  doi       = {10.6084/m9.figshare.33183167.v1},
-  url       = {https://doi.org/10.6084/m9.figshare.33183167.v1}
+  version   = {2.0.1},
+  publisher = {LottoLens PH Editorial},
+  url       = {https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.0.1}
 }
 ```
 
